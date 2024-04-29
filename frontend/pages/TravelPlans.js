@@ -15,6 +15,7 @@ export default function TravelPlans() {
   return (
     <ScrollView>
       <View style={{ alignItems: "center" }}>
+        {/* Change the uri according to db data */}
         <TPlans/>
       </View>
     </ScrollView>

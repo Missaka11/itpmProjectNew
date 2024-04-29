@@ -8,8 +8,9 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-
+import SliderHome from "../components/SliderHome";
 import { Ionicons } from "@expo/vector-icons";
+import LocationsCard from "../components/LocationsCard";
 
 const Home = () => {
   return (
@@ -17,11 +18,11 @@ const Home = () => {
       {/*search bar*/}
 
       {/*background*/}
-      {/* <Image
+      <Image
         style={[styles.backgroundIcon, styles.backgroundIconPosition]}
         resizeMode="cover"
         source={require("../assets/background.png")}
-      /> */}
+      />
       <ScrollView>
         {/*text*/}
         <Text
