@@ -103,6 +103,7 @@ description: {
   fontSize: 16,
   marginBottom: 10,
   marginTop: 20,
+  textAlign: "justify",
 },
 image: {
   width: 350,
