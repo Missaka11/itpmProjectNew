@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import * as Speech from "expo-speech";
+import TravelPlansBtn from "../components/TravelPlansBtn";
 // import { IP_ADDRESS } from "@env";
 
 
@@ -50,7 +51,7 @@ const toggleSpeaking = async () => {
 };
 
 return (
-  <ScrollView contentContainerStyle={styles.container}>
+  <ScrollView contentContainerStyle={styles.container}><View>
     {location ? (
       <>
         <Text style={styles.locationName}>{location.location}</Text>
@@ -85,6 +86,8 @@ return (
     ) : (
       <Text>Loading...</Text>
     )}
+    </View>
+    <TravelPlansBtn/>
   </ScrollView>
 );
 };
@@ -131,7 +134,7 @@ unselectedLanguage: {
   color: "gray", 
 },
 speakButton: {
-  backgroundColor: "blue",
+  backgroundColor: "#33D4FF",
   padding: 10,
   borderRadius: 5,
   marginTop: 10,
@@ -140,6 +143,7 @@ speakButtonText: {
   color: "white",
   fontSize: 16,
   fontWeight: "bold",
+  textAlign: "center",
 },
 });
 
