@@ -14,18 +14,11 @@ app.use(express.urlencoded({ extended: false }));
 
 //Call to the routes
 app.use("/api/data", require("./routes/dataRoutes"));
-// POST endpoint for user registration
-app.use("/api/register", require("./routes/userRoutes"));
-//Post endpoint for user login
-app.use("/api/login", require("./routes/userLoginRoutes"));
-// POST endpoint for Tourist registration
-app.use("/api/tourist", require("./routes/TouristRoute"));
 app.use("/api/travelPlans", require("./routes/travelPlansRoutes"));
 
 app.use("/api/locationCodinates", require("./routes/locationCodinatesRoutes"));
 
-app.use("/api/locations", require("./routes/LocationsRoutes"))
-
+app.use("/api/locations", require("./routes/LocationsRoutes"));
 
 app.listen(port, () => console.log(`Server started on ${port}`));
 

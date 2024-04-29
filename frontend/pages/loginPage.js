@@ -24,7 +24,7 @@ function LoginPage() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(`http://${IP_ADDRESS}:8000/api/login`, {
+      const response = await axios.post(`http://192.168.121.1:8000/api/login`, {
         email,
         password,
       });
@@ -79,7 +79,7 @@ function LoginPage() {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                navigation.navigate("SignUp");
+                navigation.navigate("signUp");
               }}
             >
               <Text style={styles.textSign}>User Signup</Text>
@@ -182,3 +182,5 @@ const styles = StyleSheet.create({
 });
 
 export default LoginPage;
+
+

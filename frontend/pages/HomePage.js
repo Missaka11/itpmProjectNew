@@ -26,14 +26,6 @@ export default function HomePage() {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Login Page");
-        }}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>Login</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
           navigation.navigate("Travel Plans");
         }}
         style={styles.button}

@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import axios from "axios";
-// import { IP_ADDRESS } from "@env";
+import { IP_ADDRESS } from "@env";
 
 const image = {
   uri: "https://www.xola.com/wp-content/uploads/2023/10/happy-tour-guide.png",
