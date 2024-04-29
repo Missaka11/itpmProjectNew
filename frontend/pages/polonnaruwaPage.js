@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import * as Speech from "expo-speech";
+// import { IP_ADDRESS } from "@env";
+
 
 const PolonnaruwaPage = () => {
   const [location, setLocation] = useState(null);
@@ -22,7 +24,7 @@ const PolonnaruwaPage = () => {
   const fetchLocation = async () => {
     try {
       const response = await fetch(
-        `http://192.168.1.19:8000/api/locations/${locationId}`
+        `http://192.168.1.2:8000/api/locations/${locationId}`
       );
       const data = await response.json();
       setLocation(data);

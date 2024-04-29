@@ -8,12 +8,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 import * as Speech from "expo-speech";
+// import { IP_ADDRESS } from "@env";
+
 
 const SigiriyaPage = () => {
   const [location, setLocation] = useState(null);
   const [speaking, setSpeaking] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("en"); 
   const locationId = "65fd1ee6f2c636e0f4f63d38"; 
+  
 
   useEffect(() => {
     fetchLocation();
@@ -22,7 +25,7 @@ const SigiriyaPage = () => {
   const fetchLocation = async () => {
     try {
       const response = await fetch(
-        `http://192.168.1.19:8000/api/locations/${locationId}`
+        `http://192.168.1.2:8000/api/locations/${locationId}`
       );
       const data = await response.json();
       setLocation(data);

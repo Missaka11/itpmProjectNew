@@ -1,13 +1,8 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
+// import { IP_ADDRESS } from "@env";
 
 export default function LocationsCard() {
   const navigation = useNavigation();
@@ -16,7 +11,7 @@ export default function LocationsCard() {
   // Getting data from backend
   useEffect(() => {
     axios
-      .get("http://192.168.1.19:8000/api/locations")
+      .get(`http://192.168.1.2:8000/api/locations`)
       .then((res) => {
         setlocationData(res.data);
       })
@@ -60,12 +55,11 @@ export default function LocationsCard() {
       {locationData.map((item, index) => {
         return (
           <View key={item._id}>
-            <TouchableOpacity onPress={() => handleCardPress({ ...item, index })}>
+            <TouchableOpacity
+              onPress={() => handleCardPress({ ...item, index })}
+            >
               <View style={styles.MainView}>
-                <Image
-                  source={{ uri: item.imagePath }}
-                  style={styles.image}
-                />
+                <Image source={{ uri: item.imagePath }} style={styles.image} />
                 <View style={styles.textContainer}>
                   <Text style={styles.locationText}>{item.location}</Text>
                 </View>
