@@ -79,7 +79,7 @@ function LoginPage() {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                navigation.navigate("signUp");
+                navigation.navigate("SignUp");
               }}
             >
               <Text style={styles.textSign}>User Signup</Text>
