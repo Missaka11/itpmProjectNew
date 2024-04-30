@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 import * as Speech from "expo-speech";
+import TravelPlansBtn from "../components/TravelPlansBtn";
 // import { IP_ADDRESS } from "@env";
-
 
 const PolonnaruwaPage = () => {
   const [location, setLocation] = useState(null);
   const [speaking, setSpeaking] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("en");
-  const locationId = '6605d138ecb26ccbdb4e2618'; 
+  const locationId = "6605d138ecb26ccbdb4e2618";
 
   useEffect(() => {
     fetchLocation();
@@ -51,40 +51,65 @@ const PolonnaruwaPage = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {location ? (
-        <>
-          <Text style={styles.locationName}>{location.location}</Text>
-          <Image source={{ uri: location.imagePath }} style={styles.image} />
-          <View style={styles.languageButtons}>
-            <TouchableOpacity onPress={() => setSelectedLanguage("en")}>
-            <Text style={[styles.languageButton, selectedLanguage === "en" ? styles.selectedLanguage : styles.unselectedLanguage]}>
-                English
+      <View>
+        {location ? (
+          <>
+            <Text style={styles.locationName}>{location.location}</Text>
+            <Image source={{ uri: location.imagePath }} style={styles.image} />
+            <View style={styles.languageButtons}>
+              <TouchableOpacity onPress={() => setSelectedLanguage("en")}>
+                <Text
+                  style={[
+                    styles.languageButton,
+                    selectedLanguage === "en"
+                      ? styles.selectedLanguage
+                      : styles.unselectedLanguage,
+                  ]}
+                >
+                  English
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setSelectedLanguage("fr")}>
+                <Text
+                  style={[
+                    styles.languageButton,
+                    selectedLanguage === "fr"
+                      ? styles.selectedLanguage
+                      : styles.unselectedLanguage,
+                  ]}
+                >
+                  French
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setSelectedLanguage("ru")}>
+                <Text
+                  style={[
+                    styles.languageButton,
+                    selectedLanguage === "ru"
+                      ? styles.selectedLanguage
+                      : styles.unselectedLanguage,
+                  ]}
+                >
+                  Russian
+                </Text>
+              </TouchableOpacity>
+              {/* Add more language buttons as needed */}
+            </View>
+            <TouchableOpacity
+              onPress={toggleSpeaking}
+              style={styles.speakButton}
+            >
+              <Text style={styles.speakButtonText}>
+                {speaking ? "Stop Speaking" : "Speak"}
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => setSelectedLanguage("fr")}>
-            <Text style={[styles.languageButton, selectedLanguage === "fr" ? styles.selectedLanguage : styles.unselectedLanguage]}>
-                French
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setSelectedLanguage("ru")}>
-              <Text style={[styles.languageButton, selectedLanguage === "ru" ? styles.selectedLanguage : styles.unselectedLanguage]}>
-                Russian
-              </Text>
-            </TouchableOpacity>
-            {/* Add more language buttons as needed */}
-          </View>
-          <TouchableOpacity onPress={toggleSpeaking} style={styles.speakButton}>
-            <Text style={styles.speakButtonText}>
-              {speaking ? "Stop Speaking" : "Speak"}
-            </Text>
-          </TouchableOpacity>
-          <Text style={styles.description}>{location.desc}</Text>
-          
-          
-        </>
-      ) : (
-        <Text>Loading...</Text>
-      )}
+            <Text style={styles.description}>{location.desc}</Text>
+          </>
+        ) : (
+          <Text>Loading...</Text>
+        )}
+      </View>
+      <TravelPlansBtn />
     </ScrollView>
   );
 };
@@ -122,16 +147,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "blue",
-    paddingHorizontal: 10, 
+    paddingHorizontal: 10,
   },
   selectedLanguage: {
-    color: "green", 
+    color: "green",
   },
   unselectedLanguage: {
-    color: "gray", 
+    color: "gray",
   },
   speakButton: {
-    backgroundColor: "blue",
+    backgroundColor: "#33D4FF",
     padding: 10,
     borderRadius: 5,
     marginTop: 10,
@@ -140,6 +165,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
+    textAlign: "center",
   },
 });
 
