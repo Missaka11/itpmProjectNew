@@ -109,7 +109,7 @@ const SigiriyaPage = () => {
           <Text>Loading...</Text>
         )}
       </View>
-      <TravelPlansBtn />
+      <TravelPlansBtn location="Sigiriya" />
     </ScrollView>
   );
 };
