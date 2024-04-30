@@ -2,13 +2,13 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const TravelPlansBtn = () => {
+const TravelPlansBtn = (props) => {
   const navigation = useNavigation();
   return (
     <View style={styles.TravelPlansButton}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Travel Plans");
+          navigation.navigate("Travel Plans", { location: props.location });
         }}
         style={styles.locationBtn}
       >
