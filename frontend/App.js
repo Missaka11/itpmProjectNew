@@ -30,9 +30,9 @@ export default function App() {
         <Stack.Screen name="Travel Plans" component={TravelPlans} />
         <Stack.Screen name="Inside Travel Plan" component={InsideTravelPlan} />
         <Stack.Screen name="Locations Map" component={LocationsMap} />
-        <Stack.Screen name="sigiriyaPage" component={SigiriyaPage} />
-        <Stack.Screen name="ellaPage" component={EllaPage} />
-        <Stack.Screen name="polonnaruwaPage" component={PolonnaruwaPage} />
+        <Stack.Screen name="Sigiriya" component={SigiriyaPage} />
+        <Stack.Screen name="Ella" component={EllaPage} />
+        <Stack.Screen name="Polonnaruwa" component={PolonnaruwaPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

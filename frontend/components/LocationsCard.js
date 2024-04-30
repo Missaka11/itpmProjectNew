@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
-// import { IP_ADDRESS } from "@env";
 
 export default function LocationsCard() {
   const navigation = useNavigation();
@@ -11,7 +10,7 @@ export default function LocationsCard() {
   // Getting data from backend
   useEffect(() => {
     axios
-      .get(`http://192.168.1.2:8000/api/locations`)
+      .get(`http://${process.env.IP_ADDRESS}:8000/api/locations`)
       .then((res) => {
         setlocationData(res.data);
       })
@@ -22,7 +21,7 @@ export default function LocationsCard() {
     // Navigate to a different screen based on item index
     switch (item.index) {
       case 0:
-        navigation.navigate("sigiriyaPage", {
+        navigation.navigate("Sigiriya", {
           id: item._id,
           location: item.location,
           desc: item.desc,
@@ -30,7 +29,7 @@ export default function LocationsCard() {
         });
         break;
       case 1:
-        navigation.navigate("ellaPage", {
+        navigation.navigate("Ella", {
           id: item._id,
           location: item.location,
           desc: item.desc,
@@ -38,7 +37,7 @@ export default function LocationsCard() {
         });
         break;
       case 2:
-        navigation.navigate("polonnaruwaPage", {
+        navigation.navigate("Polonnaruwa", {
           id: item._id,
           location: item.location,
           desc: item.desc,
