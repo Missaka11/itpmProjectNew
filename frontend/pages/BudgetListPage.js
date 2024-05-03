@@ -18,7 +18,7 @@ const BudgetListPage = () => {
   //get all budgets
   const fetchBudgets = async () => {
     try {
-      const response = await axios.get("http://172.28.25.166:8000/api/budget");
+      const response = await axios.get("http://192.168.8.102:8000/api/budget");
       setBudgets(response.data);
     } catch (error) {
       console.error("Error fetching budgets:", error);
@@ -28,7 +28,7 @@ const BudgetListPage = () => {
   //delete budget
   const deleteBudget = async (id) => {
     try {
-      await axios.delete(`http://172.28.25.166:8000/api/budget/${id}`);
+      await axios.delete(`http://192.168.8.102:8000/api/budget/${id}`);
       // Remove the deleted budget from the state
       setBudgets(budgets.filter(budget => budget._id !== id));
       Alert.alert("Success", "Budget deleted successfully!");

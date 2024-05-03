@@ -34,7 +34,7 @@ export default function BudgetCalHome() {
     try {
       // Make a POST request to your backend API endpoint
       const response = await axios.post(
-        "http://172.28.25.166:8000/api/budget",
+        "http://192.168.8.102:8000/api/budget",
         {
           title: title,
           Tamount: totalExpenses,
@@ -75,13 +75,7 @@ export default function BudgetCalHome() {
         placeholder="Enter the title"
       />
 
-      <View style={BudgetCalStyles.row}>
-        <Button
-          onPress={navigateToBudgetListPage}
-          color="#7F8CE0"
-          title="Go to Budget List"
-        />
-      </View>
+      
 
       <View style={BudgetCalStyles.rowSave}>
         <Button
