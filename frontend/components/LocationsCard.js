@@ -21,7 +21,7 @@ export default function LocationsCard() {
     // Navigate to a different screen based on item index
     switch (item.index) {
       case 0:
-        navigation.navigate("Sigiriya", {
+        navigation.navigate("sigiriyaPage", {
           id: item._id,
           location: item.location,
           desc: item.desc,
@@ -29,7 +29,7 @@ export default function LocationsCard() {
         });
         break;
       case 1:
-        navigation.navigate("Ella", {
+        navigation.navigate("ellaPage", {
           id: item._id,
           location: item.location,
           desc: item.desc,
@@ -37,7 +37,31 @@ export default function LocationsCard() {
         });
         break;
       case 2:
-        navigation.navigate("Polonnaruwa", {
+        navigation.navigate("polonnaruwaPage", {
+          id: item._id,
+          location: item.location,
+          desc: item.desc,
+          imagePath: item.imagePath,
+        });
+        break;
+      case 3:
+        navigation.navigate("gallePage", {
+          id: item._id,
+          location: item.location,
+          desc: item.desc,
+          imagePath: item.imagePath,
+        });
+        break;
+      case 4:
+        navigation.navigate("jaffnaPage", {
+          id: item._id,
+          location: item.location,
+          desc: item.desc,
+          imagePath: item.imagePath,
+        });
+        break;
+      case 5:
+        navigation.navigate("hikkaPage", {
           id: item._id,
           location: item.location,
           desc: item.desc,
