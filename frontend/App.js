@@ -16,14 +16,14 @@ import EllaPage from "./pages/ellaPage";
 import PolonnaruwaPage from "./pages/polonnaruwaPage";
 
 import BudgetCalHome from "./pages/BudgetCalHome";
-import BudgetListPage from "./pages/BudgetListPage"
+import BudgetListPage from "./pages/BudgetListPage";
 import BudgetCalEdit from "./pages/BudgetCalEdit";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="BudgetCalHome">
+      <Stack.Navigator initialRouteName="Profile">
         <Stack.Screen name="Home" component={Home} />
         {/* <Stack.Screen name="Home Page" component={HomePage} /> */}
 
