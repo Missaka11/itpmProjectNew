@@ -15,11 +15,15 @@ import SigiriyaPage from "./pages/sigiriyaPage";
 import EllaPage from "./pages/ellaPage";
 import PolonnaruwaPage from "./pages/polonnaruwaPage";
 
+import BudgetCalHome from "./pages/BudgetCalHome";
+import BudgetListPage from "./pages/BudgetListPage";
+import BudgetCalEdit from "./pages/BudgetCalEdit";
+
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Profile">
         <Stack.Screen name="Home" component={Home} />
         {/* <Stack.Screen name="Home Page" component={HomePage} /> */}
 
@@ -33,6 +37,9 @@ export default function App() {
         <Stack.Screen name="Sigiriya" component={SigiriyaPage} />
         <Stack.Screen name="Ella" component={EllaPage} />
         <Stack.Screen name="Polonnaruwa" component={PolonnaruwaPage} />
+        <Stack.Screen name="BudgetCalHome" component={BudgetCalHome} />
+        <Stack.Screen name="BudgetListPage" component={BudgetListPage} />
+        <Stack.Screen name="BudgetCalEdit" component={BudgetCalEdit} />
       </Stack.Navigator>
     </NavigationContainer>
   );

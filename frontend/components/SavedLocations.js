@@ -6,12 +6,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const image = {
   uri: "https://images.pexels.com/photos/307006/pexels-photo-307006.jpeg?auto=compress&cs=tinysrgb&w=854&h=480&dpr=2",
 };
 
 export default function SavedBudgects() {
+  const navigation = useNavigation();
   return (
     <TouchableOpacity style={styles.savedLocatinsView}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
