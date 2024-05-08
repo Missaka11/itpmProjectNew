@@ -23,11 +23,9 @@ const EllaPage = () => {
   const fetchLocation = async () => {
     try {
       const response = await fetch(
-<<<<<<< HEAD
+
         `http://192.168.1.19:8000/api/locations/${locationId}`
-=======
-        `http://192.168.8.101:8000/api/locations/${locationId}`
->>>>>>> 5496bd1cf8eea45c7dc29ec89901f60581f4d434
+
       );
       const data = await response.json();
       setLocation(data);
