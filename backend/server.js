@@ -22,6 +22,15 @@ app.use("/api/locations", require("./routes/LocationsRoutes"));
 
 app.use("/api/budget", require("./routes/budgetCalRoutes"));
 
+// POST endpoint for user registration
+app.use("/api/register", require("./routes/userRoutes"));
+
+//Post endpoint for user login
+app.use("/api/login", require("./routes/userLoginRoutes"));
+
+// POST endpoint for Tourist registration
+app.use("/api/tourist", require("./routes/TouristRoute"));
+
 app.listen(port, () => console.log(`Server started on ${port}`));
 
 // app.post('/login', async (req, res) => {

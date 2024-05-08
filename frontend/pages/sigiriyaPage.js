@@ -24,7 +24,7 @@ const SigiriyaPage = () => {
   const fetchLocation = async () => {
     try {
       const response = await fetch(
-        `http://192.168.8.101:8000/api/locations/${locationId}`
+        `http://192.168.1.19:8000/api/locations/${locationId}`
       );
       const data = await response.json();
       setLocation(data);

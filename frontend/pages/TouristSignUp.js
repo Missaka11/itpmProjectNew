@@ -26,7 +26,7 @@ function TouristSignUp() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        `http://${process.env.IP_ADDRESS}:8000/api/tourist`,
+        `http://192.168.1.19:8000/api/tourist`,
         {
           firstName,
           lastName,

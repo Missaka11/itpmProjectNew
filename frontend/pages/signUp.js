@@ -12,7 +12,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
-import { IP_ADDRESS } from "@env";
+// import { IP_ADDRESS } from "@env";
 
 const image = {
   uri: "https://w.forfun.com/fetch/00/0043a0b0e55215af9fd47074c5cf9497.jpeg",
@@ -29,7 +29,7 @@ function SignUp() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        `http://${process.env.IP_ADDRESS}:8000/api/register`,
+        `http://192.168.1.3:8000/api/register`,
         {
           firstName,
           lastName,
@@ -41,9 +41,10 @@ function SignUp() {
         }
       );
 
+      navigation.navigate("Home");
       if (response.status === 200) {
-        Alert.alert("Success", response.data.message);
-        navigation.navigate("Home Page");
+        // Alert.alert("Success", response.data.message);
+        navigation.navigate("Home");
       } else {
         Alert.alert("Error", response.data.message || "Something went wrong");
       }
