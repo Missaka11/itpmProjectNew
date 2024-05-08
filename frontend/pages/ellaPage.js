@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import * as Speech from "expo-speech";
 import TravelPlansBtn from "../components/TravelPlansBtn";
+import { IP_ADDRESS } from "@env";
 
 const EllaPage = () => {
   const [location, setLocation] = useState(null);
@@ -24,7 +25,7 @@ const EllaPage = () => {
     try {
       const response = await fetch(
 
-        `http://192.168.1.19:8000/api/locations/${locationId}`
+        `http://${IP_ADDRESS}:8000/api/locations/${locationId}`
 
       );
       const data = await response.json();
