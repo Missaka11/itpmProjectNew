@@ -11,11 +11,14 @@ import {
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
+import { IP_ADDRESS } from "@env";
 
 const image = {
   uri: "https://www.xola.com/wp-content/uploads/2023/10/happy-tour-guide.png",
 };
 function TouristSignUp() {
+  const navigation = useNavigation();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -26,7 +29,7 @@ function TouristSignUp() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        `http://192.168.1.19:8000/api/tourist`,
+        `http://${IP_ADDRESS}:8000/api/tourist`,
         {
           firstName,
           lastName,
@@ -38,11 +41,7 @@ function TouristSignUp() {
         }
       );
 
-      if (response.status === 200) {
-        Alert.alert("Success", response.data.message);
-      } else {
-        Alert.alert("Error", response.data.message || "Something went wrong");
-      }
+      navigation.navigate("Login Page");
     } catch (error) {
       console.error("Error:", error);
       Alert.alert("Error", "Something went wrong");
@@ -133,7 +132,10 @@ function TouristSignUp() {
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
               <Text style={styles.textSign}>Submit</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate("Login Page")}
+            >
               <Text style={styles.textSign}>login</Text>
             </TouchableOpacity>
           </View>
