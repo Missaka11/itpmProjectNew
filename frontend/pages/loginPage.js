@@ -12,7 +12,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
-// import { IP_ADDRESS } from "@env";
+import { IP_ADDRESS } from "@env";
 
 const image = {
   uri: "https://i.pinimg.com/originals/e0/8d/6e/e08d6ef241b50288b469bbf38df15984.jpg",
@@ -24,21 +24,13 @@ function LoginPage() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(
-        `http://192.168.1.3:8000/api/login`,
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`http://${IP_ADDRESS}:8000/api/login`, {
+        email,
+        password,
+      });
       const userData = response.data.user;
       console.log(userData);
-      if (response.status === 200) {
-        Alert.alert("Success", response.data.message);
-        navigation.navigate("Home Page");
-      } else {
-        Alert.alert("Error", response.data.message || "Something went wrong");
-      }
+      navigation.navigate("Home");
     } catch (error) {
       console.error(error);
       Alert.alert("Error", "Invalid email or password");
@@ -82,7 +74,7 @@ function LoginPage() {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                navigation.navigate("signUp");
+                navigation.navigate("SignUp");
               }}
             >
               <Text style={styles.textSign}>User Signup</Text>

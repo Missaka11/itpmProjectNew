@@ -14,9 +14,9 @@ import Home from "./pages/Home";
 import SigiriyaPage from "./pages/sigiriyaPage";
 import EllaPage from "./pages/ellaPage";
 import PolonnaruwaPage from "./pages/polonnaruwaPage";
-import JaffnaPage from "./pages/jaffnaPage"
-import HikkaPage from "./pages/hikkaPage"
-import GallePage from "./pages/gallePage"
+import JaffnaPage from "./pages/jaffnaPage";
+import HikkaPage from "./pages/hikkaPage";
+import GallePage from "./pages/gallePage";
 
 import BudgetCalHome from "./pages/BudgetCalHome";
 import BudgetListPage from "./pages/BudgetListPage";
@@ -27,10 +27,9 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SignUp">
+      <Stack.Navigator initialRouteName="Login Page">
         <Stack.Screen name="Home" component={Home} />
         {/* <Stack.Screen name="Home Page" component={HomePage} /> */}
-
         <Stack.Screen name="Login Page" component={LoginPage} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="TouristSignUp" component={TouristSignUp} />
