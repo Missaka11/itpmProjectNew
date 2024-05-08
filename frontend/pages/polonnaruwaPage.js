@@ -23,7 +23,7 @@ const PolonnaruwaPage = () => {
   const fetchLocation = async () => {
     try {
       const response = await fetch(
-        `http://${process.env.IP_ADDRESS}:8000/api/locations/${locationId}`
+        `http://192.168.8.101:8000/api/locations/${locationId}`
       );
       const data = await response.json();
       setLocation(data);
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 10,
+    textAlign: "center",
   },
   description: {
     fontSize: 16,
