@@ -18,6 +18,7 @@ import PolonnaruwaPage from "./pages/polonnaruwaPage";
 import BudgetCalHome from "./pages/BudgetCalHome";
 import BudgetListPage from "./pages/BudgetListPage";
 import BudgetCalEdit from "./pages/BudgetCalEdit";
+import LocationsScreen from "./pages/LocationsScreen";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
         <Stack.Screen name="BudgetCalHome" component={BudgetCalHome} />
         <Stack.Screen name="BudgetListPage" component={BudgetListPage} />
         <Stack.Screen name="BudgetCalEdit" component={BudgetCalEdit} />
+        <Stack.Screen name="LocationsScreen" component={LocationsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
