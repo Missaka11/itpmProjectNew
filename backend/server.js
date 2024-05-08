@@ -20,6 +20,8 @@ app.use("/api/locationCodinates", require("./routes/locationCodinatesRoutes"));
 
 app.use("/api/locations", require("./routes/LocationsRoutes"));
 
+app.use("/api/budget", require("./routes/budgetCalRoutes"));
+
 app.listen(port, () => console.log(`Server started on ${port}`));
 
 // app.post('/login', async (req, res) => {

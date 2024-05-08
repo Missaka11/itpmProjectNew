@@ -24,10 +24,13 @@ function LoginPage() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(`http://192.168.121.1:8000/api/login`, {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `http://${process.env.IP_ADDRESS}:8000/api/login`,
+        {
+          email,
+          password,
+        }
+      );
       const userData = response.data.user;
       console.log(userData);
       if (response.status === 200) {
@@ -182,5 +185,3 @@ const styles = StyleSheet.create({
 });
 
 export default LoginPage;
-
-

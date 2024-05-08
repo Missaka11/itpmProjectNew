@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
-// import { IP_ADDRESS } from "@env";
 
 export default function LocationsCard() {
   const navigation = useNavigation();
@@ -11,6 +10,7 @@ export default function LocationsCard() {
   // Getting data from backend
   useEffect(() => {
     axios
+
       .get(`http://192.168.1.19:8000/api/locations`)
       .then((res) => {
         setlocationData(res.data);
@@ -39,6 +39,30 @@ export default function LocationsCard() {
         break;
       case 2:
         navigation.navigate("polonnaruwaPage", {
+          id: item._id,
+          location: item.location,
+          desc: item.desc,
+          imagePath: item.imagePath,
+        });
+        break;
+      case 3:
+        navigation.navigate("gallePage", {
+          id: item._id,
+          location: item.location,
+          desc: item.desc,
+          imagePath: item.imagePath,
+        });
+        break;
+      case 4:
+        navigation.navigate("jaffnaPage", {
+          id: item._id,
+          location: item.location,
+          desc: item.desc,
+          imagePath: item.imagePath,
+        });
+        break;
+      case 5:
+        navigation.navigate("hikkaPage", {
           id: item._id,
           location: item.location,
           desc: item.desc,
