@@ -11,6 +11,7 @@ import {
 import SliderHome from "../components/SliderHome";
 import { Ionicons } from "@expo/vector-icons";
 import LocationsCard from "../components/LocationsCard";
+import Header from "../components/header";
 
 const Home = () => {
   return (
@@ -23,7 +24,10 @@ const Home = () => {
         resizeMode="cover"
         source={require("../assets/background.png")}
       />
-      <ScrollView>
+    
+
+      <ScrollView >
+      <Header />
         {/*text*/}
         <Text
           style={[styles.makeAdventuresMemories, styles.backgroundIconPosition]}
