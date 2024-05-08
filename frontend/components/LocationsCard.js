@@ -11,7 +11,9 @@ export default function LocationsCard() {
   // Getting data from backend
   useEffect(() => {
     axios
+
       .get(`http://${IP_ADDRESS}:8000/api/locations`)
+
       .then((res) => {
         setlocationData(res.data);
       })

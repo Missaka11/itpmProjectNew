@@ -12,7 +12,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
-import { IP_ADDRESS } from "@env";
+// import { IP_ADDRESS } from "@env";
 
 const image = {
   uri: "https://i.pinimg.com/originals/e0/8d/6e/e08d6ef241b50288b469bbf38df15984.jpg",
@@ -25,7 +25,7 @@ function LoginPage() {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        `http://${process.env.IP_ADDRESS}:8000/api/login`,
+        `http://192.168.1.3:8000/api/login`,
         {
           email,
           password,
