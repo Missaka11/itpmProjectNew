@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
+import { IP_ADDRESS } from "@env";
 
 export default function LocationsCard() {
   const navigation = useNavigation();
@@ -10,7 +11,7 @@ export default function LocationsCard() {
   // Getting data from backend
   useEffect(() => {
     axios
-      .get(`http://192.168.8.101:8000/api/locations`)
+      .get(`http://${IP_ADDRESS}:8000/api/locations`)
       .then((res) => {
         setlocationData(res.data);
       })
