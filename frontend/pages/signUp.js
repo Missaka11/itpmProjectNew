@@ -29,7 +29,7 @@ function SignUp() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        `http://192.168.1.19:8000/api/register`,
+        `http://192.168.1.3:8000/api/register`,
         {
           firstName,
           lastName,
@@ -41,9 +41,10 @@ function SignUp() {
         }
       );
 
+      navigation.navigate("Home");
       if (response.status === 200) {
-        Alert.alert("Success", response.data.message);
-        navigation.navigate("Home Page");
+        // Alert.alert("Success", response.data.message);
+        navigation.navigate("Home");
       } else {
         Alert.alert("Error", response.data.message || "Something went wrong");
       }

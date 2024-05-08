@@ -12,6 +12,7 @@ import SliderHome from "../components/SliderHome";
 import { Ionicons } from "@expo/vector-icons";
 import LocationsCard from "../components/LocationsCard";
 
+
 const Home = () => {
   return (
     <View style={[styles.home, styles.homeLayout]}>

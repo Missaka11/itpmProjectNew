@@ -12,6 +12,6 @@ const userSchema = new mongoose.Schema({
   status: { type: Number, default: 1 }
 });
 
-const User = mongoose.model("Users", userSchema);
+const User = mongoose.model("users", userSchema);
 
 module.exports = User;
