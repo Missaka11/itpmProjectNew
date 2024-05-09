@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   MainView: {
     height: 130,
     width: 360,
-    backgroundColor: "#D3D3D3",
+    backgroundColor: "#FFF4CF",
     borderRadius: 8,
     flexDirection: "row",
     marginTop: 8,

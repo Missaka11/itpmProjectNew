@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
 import { useNavigation } from "@react-navigation/native";
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
   search: {
     flexDirection: "row",
     alignItems: "center",
-    alignSelf:"center",
+    alignSelf: "center",
     borderWidth: 1,
     borderColor: "gray",
     borderRadius: 20,
@@ -70,6 +76,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 40,
+    fontSize: 15,
   },
   icon: {
     marginLeft: 10,

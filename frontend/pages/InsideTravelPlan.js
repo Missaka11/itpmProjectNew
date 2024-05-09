@@ -78,6 +78,7 @@ export default function InsideTravelPlan() {
                 textAlign: "center",
                 marginTop: 15,
                 marginBottom: 10,
+                fontSize: 15,
               }}
             >
               {plan.budget}
@@ -95,7 +96,7 @@ export default function InsideTravelPlan() {
                 });
               }}
             >
-              <Text>Locations on map</Text>
+              <Text style={styles.buttonText}>Locations on map</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
     marginRight: "auto",
   },
   details: {
-    backgroundColor: "orange",
+    backgroundColor: "#FFBB70",
     margin: 10,
     borderRadius: 8,
     height: "63%",
@@ -129,10 +130,15 @@ const styles = StyleSheet.create({
   locationBtn: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "aqua",
+    backgroundColor: "#5FDDE5",
     borderRadius: 8,
     height: 40,
     width: 240,
     top: 35,
   },
+  buttonText:{
+    color: "#153448",
+    fontSize: 15,
+    fontWeight: "bold",
+  }
 });
