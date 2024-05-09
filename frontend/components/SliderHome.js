@@ -35,11 +35,17 @@ export default function SliderHome() {
     }
   };
 
+  const handleSearchButtonPress = () => {
+    navigation.navigate("SearchBar"); // Navigate to SearchBarPage when search button is pressed
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.search}>
         <TextInput style={styles.input} placeholder="Search..." />
-        <Ionicons name="search" size={24} color="black" style={styles.icon} />
+        <TouchableOpacity style={styles.searchButton} onPress={handleSearchButtonPress}>
+          <Ionicons name="search" size={24} color="black" style={styles.icon} />
+        </TouchableOpacity>
       </View>
 
       <View style={{ marginTop: 100 }}>
