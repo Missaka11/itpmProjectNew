@@ -12,7 +12,7 @@ const TravelPlansBtn = (props) => {
         }}
         style={styles.locationBtn}
       >
-        <Text>Travel Plans</Text>
+        <Text style={styles.buttonText}>Travel Plans</Text>
       </TouchableOpacity>
     </View>
   );
@@ -24,10 +24,15 @@ const styles = StyleSheet.create({
   locationBtn: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "aqua",
+    backgroundColor: "#5FDDE5",
     borderRadius: 8,
     height: 40,
     width: 240,
     bottom: 10,
+  },
+  buttonText: {
+    color: "#153448",
+    fontSize: 15,
+    fontWeight: "bold",
   },
 });

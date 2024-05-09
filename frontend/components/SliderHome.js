@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
 import { useNavigation } from "@react-navigation/native";
@@ -36,7 +42,7 @@ export default function SliderHome() {
         <Ionicons name="search" size={24} color="black" style={styles.icon} />
       </View>
 
-      <View style={{ marginTop: 200 }}>
+      <View style={{ marginTop: 100 }}>
         <SliderBox
           images={images}
           sliderBoxHeight={200}
@@ -44,7 +50,7 @@ export default function SliderHome() {
           autoplay
           circleLoop
           dotColor="#7F8CE0"
-          ImageComponentStyle={{ borderRadius: 15, width: "90%" }}
+          ImageComponentStyle={{ borderRadius: 15, width: "93%" }}
         />
       </View>
     </View>
@@ -58,17 +64,19 @@ const styles = StyleSheet.create({
   search: {
     flexDirection: "row",
     alignItems: "center",
+    alignSelf: "center",
     borderWidth: 1,
     borderColor: "gray",
-    borderRadius: 5,
-    padding: 5,
-    width: "70%",
-    left: 55,
-    top: 80,
+    borderRadius: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+    width: "92%",
+    top: 10,
   },
   input: {
     flex: 1,
     height: 40,
+    fontSize: 15,
   },
   icon: {
     marginLeft: 10,
