@@ -24,10 +24,10 @@ const Home = () => {
         resizeMode="cover"
         source={require("../assets/background.png")}
       />
-    
+      
 
       <ScrollView >
-      <Header />
+      
         {/*text*/}
         <Text
           style={[styles.makeAdventuresMemories, styles.backgroundIconPosition]}
