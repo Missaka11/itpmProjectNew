@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   backgroundIconPosition: {
-    top: 80,
+    top: 70,
     position: "absolute",
   },
   backgroundIcon: {
     left: -75,
     width: 655,
-    height: 696,
+    height: 797,
     overflow: "hidden",
   },
   makeAdventuresMemories: {

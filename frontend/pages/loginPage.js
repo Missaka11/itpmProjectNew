@@ -30,7 +30,8 @@ function LoginPage() {
       });
       const userData = response.data.user;
       console.log(userData);
-      navigation.navigate("Home");
+      //navigation.navigate("Home Page");
+      navigation.replace('App');
     } catch (error) {
       console.error(error);
       Alert.alert("Error", "Invalid email or password");

@@ -37,7 +37,7 @@ export default function BudgetCalEdit() {
       // Calculate total amount (Tamount) by summing up all expenses
       const totalAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
       // Send PUT request to update the budget
-      await axios.put(`http://192.168.8.102:8000/api/budget/${budget._id}`, {
+      await axios.put(`http://192.168.8.101:8000/api/budget/${budget._id}`, {
         title: title,
         expenses: expenses,
         Tamount: totalAmount  // Update Tamount with the calculated total amount

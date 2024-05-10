@@ -34,7 +34,7 @@ export default function BudgetCalHome() {
     try {
       // Make a POST request to your backend API endpoint
       const response = await axios.post(
-        "http://192.168.8.102:8000/api/budget",
+        "http://192.168.8.101:8000/api/budget",
         {
           title: title,
           Tamount: totalExpenses,
@@ -52,11 +52,7 @@ export default function BudgetCalHome() {
       console.error("Error saving budget:", error);
     }
   };
-  //navigate to budgetlist
-  const navigation = useNavigation();
-  const navigateToBudgetListPage = () => {
-    navigation.navigate("BudgetListPage"); 
-  };
+  
 
   // Render the components and UI
   return (
