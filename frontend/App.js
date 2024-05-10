@@ -21,15 +21,17 @@ import BudgetCalHome from "./pages/BudgetCalHome";
 import BudgetListPage from "./pages/BudgetListPage";
 import BudgetCalEdit from "./pages/BudgetCalEdit";
 import LocationsScreen from "./pages/LocationsScreen";
-import SearchBar from "./pages/SearchBar";
+
+
 import UserProfilePage from "./pages/UserProfilePage";
 import EditProfile from "./pages/EditProfile";
+
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login Page">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login Page" component={LoginPage} />
         <Stack.Screen name="SignUp" component={SignUp} />
@@ -48,9 +50,9 @@ export default function App() {
         <Stack.Screen name="BudgetListPage" component={BudgetListPage} />
         <Stack.Screen name="BudgetCalEdit" component={BudgetCalEdit} />
         <Stack.Screen name="LocationsScreen" component={LocationsScreen} />
-        <Stack.Screen name="SearchBar" component={SearchBar} />
         <Stack.Screen name="UserProfilePage" component={UserProfilePage} />
         <Stack.Screen name="EditProfile" component={EditProfile} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
