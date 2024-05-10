@@ -1,15 +1,27 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ProfileInfoBtn() {
+  const navigation = useNavigation();
   return (
     <View style={{ alignItems: "center" }}>
       <TouchableOpacity
-        onPress={() => alert("Simple Button pressed")}
+        onPress={() => {
+          navigation.navigate("UserProfilePage");
+        }}
         style={styles.ProfileInfoBtn}
       >
-        <Text>Profile Info</Text>
+        <Text>Edit Profile</Text>
       </TouchableOpacity>
+      
     </View>
   );
 }
