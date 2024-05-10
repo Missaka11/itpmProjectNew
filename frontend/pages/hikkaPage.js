@@ -24,9 +24,7 @@ const HikkaPage = () => {
   const fetchLocation = async () => {
     try {
       const response = await fetch(
-
         `http://${IP_ADDRESS}:8000/api/locations/${locationId}`
-
       );
       const data = await response.json();
       setLocation(data);
@@ -122,6 +120,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    backgroundColor: "#FFF4CF",
   },
   locationName: {
     fontSize: 24,
@@ -134,6 +133,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 20,
     textAlign: "justify",
+    marginBottom: 40,
   },
   image: {
     width: 350,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   speakButton: {
-    backgroundColor: "#33D4FF",
+    backgroundColor: "#277BC0",
     padding: 10,
     borderRadius: 5,
     marginTop: 10,

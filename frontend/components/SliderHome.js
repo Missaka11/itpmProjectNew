@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 import React, { Component, useState } from "react";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+=======
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+>>>>>>> 9a04251dc4203d49dd41710eef648f0432dce345
 import { Ionicons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
 import { useNavigation } from "@react-navigation/native";
@@ -82,7 +93,7 @@ export default function SliderHome() {
       {/* Render the SearchBar component */}
       <SearchBar />
 
-      <View style={{ marginTop: 200 }}>
+      <View style={{ marginTop: 100 }}>
         <SliderBox
           images={images}
           sliderBoxHeight={200}
@@ -90,7 +101,7 @@ export default function SliderHome() {
           autoplay
           circleLoop
           dotColor="#7F8CE0"
-          ImageComponentStyle={{ borderRadius: 15, width: "90%" }}
+          ImageComponentStyle={{ borderRadius: 15, width: "93%" }}
         />
       </View>
     </View>
@@ -104,17 +115,19 @@ const styles = StyleSheet.create({
   search: {
     flexDirection: "row",
     alignItems: "center",
+    alignSelf: "center",
     borderWidth: 1,
     borderColor: "gray",
-    borderRadius: 5,
-    padding: 5,
-    width: "70%",
-    left: 55,
-    top: 80,
+    borderRadius: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+    width: "92%",
+    top: 10,
   },
   input: {
     flex: 1,
     height: 40,
+    fontSize: 15,
   },
   icon: {
     marginLeft: 10,

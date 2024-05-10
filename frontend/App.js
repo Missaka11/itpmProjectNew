@@ -1,7 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import HomePage from "./pages/HomePage";
 import UserProfile from "./pages/UserProfile";
 import TravelPlans from "./pages/TravelPlans";
 import InsideTravelPlan from "./pages/InsideTravelPlan";
@@ -22,6 +21,12 @@ import BudgetCalHome from "./pages/BudgetCalHome";
 import BudgetListPage from "./pages/BudgetListPage";
 import BudgetCalEdit from "./pages/BudgetCalEdit";
 import LocationsScreen from "./pages/LocationsScreen";
+<<<<<<< HEAD
+=======
+import SearchBar from "./pages/SearchBar";
+import UserProfilePage from "./pages/UserProfilePage";
+import EditProfile from "./pages/EditProfile";
+>>>>>>> 9a04251dc4203d49dd41710eef648f0432dce345
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -29,7 +34,6 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login Page">
         <Stack.Screen name="Home" component={Home} />
-        {/* <Stack.Screen name="Home Page" component={HomePage} /> */}
         <Stack.Screen name="Login Page" component={LoginPage} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="TouristSignUp" component={TouristSignUp} />
@@ -47,7 +51,13 @@ export default function App() {
         <Stack.Screen name="BudgetListPage" component={BudgetListPage} />
         <Stack.Screen name="BudgetCalEdit" component={BudgetCalEdit} />
         <Stack.Screen name="LocationsScreen" component={LocationsScreen} />
+<<<<<<< HEAD
         
+=======
+        <Stack.Screen name="SearchBar" component={SearchBar} />
+        <Stack.Screen name="UserProfilePage" component={UserProfilePage} />
+        <Stack.Screen name="EditProfile" component={EditProfile} />
+>>>>>>> 9a04251dc4203d49dd41710eef648f0432dce345
       </Stack.Navigator>
     </NavigationContainer>
   );

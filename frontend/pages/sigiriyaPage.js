@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    backgroundColor: "#FFF4CF",
   },
   locationName: {
     fontSize: 24,
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   speakButton: {
-    backgroundColor: "#33D4FF",
+    backgroundColor: "#277BC0",
     padding: 10,
     borderRadius: 5,
     marginTop: 10,

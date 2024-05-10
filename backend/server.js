@@ -31,6 +31,13 @@ app.use("/api/login", require("./routes/userLoginRoutes"));
 // POST endpoint for Tourist registration
 app.use("/api/tourist", require("./routes/TouristRoute"));
 
+//getUser details
+app.use("/api/getUser", require("./routes/getuserRoutes"));
+//updateUser
+app.use("/api/update", require("./routes/updateRoutes"));
+//deleteUSer
+app.use("/api/delete", require("./routes/deleteRoutes"));
+
 app.listen(port, () => console.log(`Server started on ${port}`));
 
 // app.post('/login', async (req, res) => {

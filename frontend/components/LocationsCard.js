@@ -24,54 +24,22 @@ export default function LocationsCard() {
     // Navigate to a different screen based on item index
     switch (item.index) {
       case 0:
-        navigation.navigate("sigiriyaPage", {
-          id: item._id,
-          location: item.location,
-          desc: item.desc,
-          imagePath: item.imagePath,
-        });
+        navigation.navigate("sigiriyaPage");
         break;
       case 1:
-        navigation.navigate("ellaPage", {
-          id: item._id,
-          location: item.location,
-          desc: item.desc,
-          imagePath: item.imagePath,
-        });
+        navigation.navigate("ellaPage");
         break;
       case 2:
-        navigation.navigate("polonnaruwaPage", {
-          id: item._id,
-          location: item.location,
-          desc: item.desc,
-          imagePath: item.imagePath,
-        });
+        navigation.navigate("polonnaruwaPage");
         break;
       case 3:
-        navigation.navigate("gallePage", {
-          id: item._id,
-          location: item.location,
-          desc: item.desc,
-          imagePath: item.imagePath,
-        });
+        navigation.navigate("gallePage");
         break;
       case 4:
-        navigation.navigate("jaffnaPage", {
-          id: item._id,
-          location: item.location,
-          desc: item.desc,
-          imagePath: item.imagePath,
-        });
+        navigation.navigate("jaffnaPage");
         break;
       case 5:
-        navigation.navigate("hikkaPage", {
-          id: item._id,
-          location: item.location,
-          desc: item.desc,
-          imagePath: item.imagePath,
-        });
-        break;
-      default:
+        navigation.navigate("hikkaPage");
         break;
     }
   };
@@ -102,7 +70,7 @@ const styles = StyleSheet.create({
   MainView: {
     height: 130,
     width: 360,
-    backgroundColor: "#D3D3D3",
+    backgroundColor: "#FFF4CF",
     borderRadius: 8,
     flexDirection: "row",
     marginTop: 8,

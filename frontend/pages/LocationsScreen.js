@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, ImageBackground, TouchableOpacity, Alert } from 'react-native';
 import axios from 'axios';
+import { IP_ADDRESS } from "@env";
 
 const LocationsScreen = () => {
   const [locations, setLocations] = useState([]);
@@ -9,7 +10,7 @@ const LocationsScreen = () => {
     // Fetch locations
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://172.28.31.130:8000/api/locations');
+        const response = await axios.get(`http://${IP_ADDRESS}:8000/api/locations`);
         setLocations(response.data);
       } catch (error) {
         console.error('Error fetching locations:', error);

@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   MainView: {
     height: 130,
     width: 360,
-    backgroundColor: "orange",
+    backgroundColor: "#FEB941",
     borderRadius: 8,
     flexDirection: "row",
     marginTop: 8,
