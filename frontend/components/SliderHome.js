@@ -1,8 +1,52 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
 import { useNavigation } from "@react-navigation/native";
+
+// Import the SearchBar logic
+const SearchBar = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigation = useNavigation();
+
+  const handleSearch = () => {
+    // Normalize search query to lowercase
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+
+    // Define page routes based on search query
+    const pages = {
+      galle: 'gallePage',
+      polonnaruwa: 'polonnaruwaPage',
+      sigiriya: 'sigiriyaPage',
+      ella: 'ellaPage',
+      hikkaduwa: 'hikkaPage',
+      jaffna: 'jaffnaPage',
+    };
+
+    // Check if query is a valid page
+    if (pages[normalizedQuery]) {
+      navigation.navigate(pages[normalizedQuery]);
+    } else {
+      // Handle query does not match any page
+      alert(`Page "${searchQuery}" not found`);
+    }
+  };
+
+  return (
+    <View style={styles.search}>
+      <TextInput
+        style={styles.input}
+        placeholder="Search..."
+        value={searchQuery}
+        onChangeText={text => setSearchQuery(text)}
+        onSubmitEditing={handleSearch} // Trigger search on submit
+      />
+      <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
+        <Ionicons name="search" size={24} color="black" style={styles.icon} />
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 export default function SliderHome() {
   const navigation = useNavigation();
@@ -35,12 +79,8 @@ export default function SliderHome() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.search}>
-        <TextInput style={styles.input} placeholder="Search..." />
-        <TouchableOpacity style={styles.searchButton} onPress={handleSearchButtonPress}>
-          <Ionicons name="search" size={24} color="black" style={styles.icon} />
-        </TouchableOpacity>
-      </View>
+      {/* Render the SearchBar component */}
+      <SearchBar />
 
       <View style={{ marginTop: 200 }}>
         <SliderBox
