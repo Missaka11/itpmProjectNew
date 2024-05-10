@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 import React, { Component, useState } from "react";
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
-=======
-import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
@@ -10,7 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
->>>>>>> 9a04251dc4203d49dd41710eef648f0432dce345
+
 import { Ionicons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
 import { useNavigation } from "@react-navigation/native";
