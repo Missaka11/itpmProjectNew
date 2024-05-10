@@ -38,7 +38,7 @@ const HomeStack = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen name="Travel Plans" component={TravelPlans} />
-      <Stack.Screen name="Inside Travel Plan" component={InsideTravelPlan} options={{ headerShown: false }}/>
+      <Stack.Screen name="Inside Travel Plan" component={InsideTravelPlan} />
       <Stack.Screen name="Locations Map" component={LocationsMap} />
       <Stack.Screen name="LocationsScreen" component={LocationsScreen} />
       <Stack.Screen name="sigiriyaPage" component={SigiriyaPage} />
@@ -47,7 +47,11 @@ const HomeStack = () => {
       <Stack.Screen name="jaffnaPage" component={JaffnaPage} />
       <Stack.Screen name="hikkaPage" component={HikkaPage} />
       <Stack.Screen name="gallePage" component={GallePage} />
-      <Stack.Screen name="SearchBar" component={SearchBar} options={{ headerShown: false }}/>
+      <Stack.Screen
+        name="SearchBar"
+        component={SearchBar}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 };

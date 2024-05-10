@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Button, SafeAreaView, Text, TextInput, View, Alert, ScrollView } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  Text,
+  TextInput,
+  View,
+  Alert,
+  ScrollView,
+} from "react-native";
 import axios from "axios";
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from "@react-navigation/native";
 import BudgetCalStyles from "./BudgetCalStyles";
 import AddBudgetCal from "./Add_BudgetCal";
 import BudgetCalComponent from "./BudgetCal_Component";
+import { IP_ADDRESS } from "@env";
 
 export default function BudgetCalEdit() {
   const navigation = useNavigation();
   const route = useRoute();
-  
+
   // Extract the budget data passed from BudgetListPage.js
   const { budget } = route.params;
 
@@ -35,12 +44,15 @@ export default function BudgetCalEdit() {
   const updateBudget = async () => {
     try {
       // Calculate total amount (Tamount) by summing up all expenses
-      const totalAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
+      const totalAmount = expenses.reduce(
+        (total, expense) => total + expense.amount,
+        0
+      );
       // Send PUT request to update the budget
-      await axios.put(`http://192.168.8.101:8000/api/budget/${budget._id}`, {
+      await axios.put(`http://${IP_ADDRESS}:8000/api/budget/${budget._id}`, {
         title: title,
         expenses: expenses,
-        Tamount: totalAmount  // Update Tamount with the calculated total amount
+        Tamount: totalAmount, // Update Tamount with the calculated total amount
       });
       Alert.alert("Scouccess", "Budget updated successfully!");
       // Navigate back to BudgetListPage.js after successful update
@@ -54,57 +66,57 @@ export default function BudgetCalEdit() {
   return (
     <SafeAreaView style={BudgetCalStyles.container}>
       <ScrollView>
-      <Text style={BudgetCalStyles.heading}>Edit Budget</Text>
+        <Text style={BudgetCalStyles.heading}>Edit Budget</Text>
 
-      {/* Input field for title */}
-      <TextInput
-        onChangeText={(value) => setTitle(value)}
-        value={title}
-        style={BudgetCalStyles.textInputTitle}
-        placeholder="Enter the title"
-      />
-
-      <View style={BudgetCalStyles.totalExpensesContainer}>
-        <Text style={BudgetCalStyles.totalExpensesText}>
-          Total Budget: Rs.{totalExpenses}
-        </Text>
-      </View>
-
-      {/* Conditional rendering: If addForm is true, render the Addform component */}
-      {addForm == true ? (
-        <AddBudgetCal
-        name={name}
-        setName={setName}
-        amount={amount}
-        setAmount={setAmount}
-          setExpenses={setExpenses}
-          expenses={expenses}
-          setAddForm={setAddForm}
+        {/* Input field for title */}
+        <TextInput
+          onChangeText={(value) => setTitle(value)}
+          value={title}
+          style={BudgetCalStyles.textInputTitle}
+          placeholder="Enter the title"
         />
-      ) : (
-        /* If addForm is false, render the "Add Expense" button */
-        <View style={BudgetCalStyles.row}>
+
+        <View style={BudgetCalStyles.totalExpensesContainer}>
+          <Text style={BudgetCalStyles.totalExpensesText}>
+            Total Budget: Rs.{totalExpenses}
+          </Text>
+        </View>
+
+        {/* Conditional rendering: If addForm is true, render the Addform component */}
+        {addForm == true ? (
+          <AddBudgetCal
+            name={name}
+            setName={setName}
+            amount={amount}
+            setAmount={setAmount}
+            setExpenses={setExpenses}
+            expenses={expenses}
+            setAddForm={setAddForm}
+          />
+        ) : (
+          /* If addForm is false, render the "Add Expense" button */
+          <View style={BudgetCalStyles.row}>
+            <Button
+              onPress={addExpense}
+              color="#7F8CE0"
+              style={BudgetCalStyles.addButton}
+              title="Add Expense"
+            />
+          </View>
+        )}
+
+        {/* Render the ExpenseComponent */}
+        <BudgetCalComponent expenses={expenses} setExpenses={setExpenses} />
+
+        {/* Button to update the budget */}
+        <View style={BudgetCalStyles.rowSave}>
           <Button
-            onPress={addExpense}
             color="#7F8CE0"
-            style={BudgetCalStyles.addButton}
-            title="Add Expense"
+            style={BudgetCalStyles.saveButton}
+            title="Update Budget"
+            onPress={updateBudget}
           />
         </View>
-      )}
-
-      {/* Render the ExpenseComponent */}
-      <BudgetCalComponent expenses={expenses} setExpenses={setExpenses} />
-
-      {/* Button to update the budget */}
-      <View style={BudgetCalStyles.rowSave}>
-        <Button
-          color="#7F8CE0"
-          style={BudgetCalStyles.saveButton}
-          title="Update Budget"
-          onPress={updateBudget}
-        />
-      </View>
       </ScrollView>
     </SafeAreaView>
   );
