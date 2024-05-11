@@ -13,7 +13,7 @@ export default function LocationsMap() {
   // Getting locationCodinates from backend
   useEffect(() => {
     axios
-      .get(`http://${IP_ADDRESS}:8000/api/locationCodinates`)
+      .get(`http://${process.env.IP_ADDRESS}:8000/api/locationCodinates`)
       .then((res) => {
         setLocationCodinates(res.data);
       })

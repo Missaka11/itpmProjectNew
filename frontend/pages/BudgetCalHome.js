@@ -41,7 +41,7 @@ export default function BudgetCalHome() {
     try {
       // Make a POST request to your backend API endpoint
       const response = await axios.post(
-        `http://${IP_ADDRESS}:8000/api/budget`,
+        `http://${process.env.IP_ADDRESS}:8000/api/budget`,
         {
           title: title,
           Tamount: totalExpenses,

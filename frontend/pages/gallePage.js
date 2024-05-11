@@ -25,7 +25,7 @@ const GallePage = () => {
     try {
       const response = await fetch(
 
-        `http://${IP_ADDRESS}:8000/api/locations/${locationId}`
+        `http://${process.env.IP_ADDRESS}:8000/api/locations/${locationId}`
 
       );
       const data = await response.json();

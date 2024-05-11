@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { IP_ADDRESS } from "@env";
 
 export default function TPlans() {
   const navigation = useNavigation();
@@ -18,7 +19,7 @@ export default function TPlans() {
   // Getting data from backend
   useEffect(() => {
     axios
-      .get(`http://${process.env.IP_ADDRESS}:8000/api/travelPlans`)
+      .get(`http://${IP_ADDRESS}:8000/api/travelPlans`)
       .then((res) => {
         setTravelPlanData(res.data);
       })
