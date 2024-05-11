@@ -3,6 +3,6 @@ const { deleteUser } = require("../controller/userController");
 const router = express.Router();
 
 
-router.route("/").delete(deleteUser);
+router.route("/:userId").delete(deleteUser);
 
 module.exports = router;

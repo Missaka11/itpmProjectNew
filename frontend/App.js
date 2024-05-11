@@ -25,13 +25,16 @@ import LocationsScreen from "./pages/LocationsScreen";
 
 import UserProfilePage from "./pages/UserProfilePage";
 import EditProfile from "./pages/EditProfile";
+import DeleteUserScreen from "./pages/DeleteUserScreen";
+import SettingsPage from "./pages/Settings";
+
 
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login Page">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login Page" component={LoginPage} />
         <Stack.Screen name="SignUp" component={SignUp} />
@@ -52,6 +55,9 @@ export default function App() {
         <Stack.Screen name="LocationsScreen" component={LocationsScreen} />
         <Stack.Screen name="UserProfilePage" component={UserProfilePage} />
         <Stack.Screen name="EditProfile" component={EditProfile} />
+        <Stack.Screen name="Settings" component={SettingsPage} />
+        <Stack.Screen name="DeleteUserScreen" component={DeleteUserScreen} />
+
 
       </Stack.Navigator>
     </NavigationContainer>
