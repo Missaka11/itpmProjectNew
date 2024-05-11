@@ -28,7 +28,7 @@ const BudgetListPage = () => {
   //get all budgets
   const fetchBudgets = async () => {
     try {
-      const response = await axios.get(`http://192.168.92.11:8000/api/budget`);
+      const response = await axios.get(`http://${process.IP_ADDRESS}:8000/api/budget`);
       setBudgets(response.data);
     } catch (error) {
       console.error("Error fetching budgets:", error);
