@@ -13,7 +13,7 @@ const UserProfilePage = ({ navigation }) => {
   const fetchUserData = async () => {
     try {
       const userId = '66006672c19b1467cc73b3fc'; 
-      const response = await axios.get(`http://${IP_ADDRESS}:8000/api/getUser/${userId}`);
+      const response = await axios.get(`http://${process.env.IP_ADDRESS}:8000/api/getUser/${userId}`);
       setUser(response.data); // Set user details in state
     } catch (error) {
       console.error('Error fetching user:', error);

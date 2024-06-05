@@ -34,7 +34,7 @@ const EditProfile = ({ navigation }) => {
   const handleUpdateProfile = async () => {
     try {
       const { firstName, lastName, address, email, mobile, password } = user;
-      const response = await axios.put(`http://${IP_ADDRESS}:8000/api/update/66017d0b1707f39df0e99921`, {
+      const response = await axios.put(`http://192.168.1.3:8000/api/update/66017d0b1707f39df0e99921`, {
         firstName,
         lastName,
         address,

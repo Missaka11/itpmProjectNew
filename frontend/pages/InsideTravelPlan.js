@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   },
   mainBox: {
     marginTop: 10,
-    height: "95%",
+    height: "98%",
     width: "95%",
     backgroundColor: "white",
     borderRadius: 8,
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     height: 40,
     width: 240,
-    top: 35,
+    top: 22,
   },
   buttonText:{
     color: "#153448",

@@ -1,4 +1,3 @@
-
 import React, { Component, useState } from "react";
 import {
   StyleSheet,
@@ -14,7 +13,9 @@ import { useNavigation } from "@react-navigation/native";
 
 // Import the SearchBar logic
 const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+
+  const [searchQuery, setSearchQuery] = useState("");
+
   const navigation = useNavigation();
 
   const handleSearch = () => {
@@ -23,12 +24,13 @@ const SearchBar = () => {
 
     // Define page routes based on search query
     const pages = {
-      galle: 'gallePage',
-      polonnaruwa: 'polonnaruwaPage',
-      sigiriya: 'sigiriyaPage',
-      ella: 'ellaPage',
-      hikkaduwa: 'hikkaPage',
-      jaffna: 'jaffnaPage',
+      galle: "gallePage",
+      polonnaruwa: "polonnaruwaPage",
+      sigiriya: "sigiriyaPage",
+      ella: "ellaPage",
+      hikkaduwa: "hikkaPage",
+      jaffna: "jaffnaPage",
+
     };
 
     // Check if query is a valid page
@@ -46,7 +48,9 @@ const SearchBar = () => {
         style={styles.input}
         placeholder="Search..."
         value={searchQuery}
-        onChangeText={text => setSearchQuery(text)}
+
+        onChangeText={(text) => setSearchQuery(text)}
+
         onSubmitEditing={handleSearch} // Trigger search on submit
       />
       <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>

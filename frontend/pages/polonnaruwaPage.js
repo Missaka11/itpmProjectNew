@@ -109,7 +109,7 @@ const PolonnaruwaPage = () => {
           <Text>Loading...</Text>
         )}
       </View>
-      <TravelPlansBtn />
+      <TravelPlansBtn location="Polonnaruwa"/>
     </ScrollView>
   );
 };

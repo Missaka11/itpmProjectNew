@@ -10,7 +10,7 @@ const LocationsScreen = () => {
     // Fetch locations
     const fetchLocations = async () => {
       try {
-        const response = await axios.get(`http://${IP_ADDRESS}:8000/api/locations`);
+        const response = await axios.get(`http://${process.env.IP_ADDRESS}:8000/api/locations`);
         setLocations(response.data);
       } catch (error) {
         console.error('Error fetching locations:', error);

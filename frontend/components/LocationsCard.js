@@ -12,7 +12,7 @@ export default function LocationsCard() {
   useEffect(() => {
     axios
 
-      .get(`http://${IP_ADDRESS}:8000/api/locations`)
+      .get(`http://${process.env.IP_ADDRESS}:8000/api/locations`)
 
       .then((res) => {
         setlocationData(res.data);
