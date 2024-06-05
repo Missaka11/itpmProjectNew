@@ -34,10 +34,10 @@ export default function UserProfile() {
         <View style={styles.mainBox}>
           <Text style={styles.userName}>User name</Text>
 
-          <View style={styles.TourGuideSwitchView}>
+          {/* <View style={styles.TourGuideSwitchView}>
             <Text style={{ marginRight: 20 }}>Tour Guiding</Text>
             <TourGuideSwitch />
-          </View>
+          </View> */}
 
           <View style={styles.SavedItems}>
             <SavedLocations />

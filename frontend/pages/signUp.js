@@ -29,7 +29,7 @@ function SignUp() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        `http://${IP_ADDRESS}:8000/api/register`,
+        `http://${process.env.IP_ADDRESS}:8000/api/register`,
         {
           firstName,
           lastName,

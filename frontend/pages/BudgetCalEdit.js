@@ -49,7 +49,7 @@ export default function BudgetCalEdit() {
         0
       );
       // Send PUT request to update the budget
-      await axios.put(`http://192.168.92.11:8000/api/budget/${budget._id}`, {
+      await axios.put(`http://${process.env.IP_ADDRESS}:8000/api/budget/${budget._id}`, {
         title: title,
         expenses: expenses,
         Tamount: totalAmount, // Update Tamount with the calculated total amount
