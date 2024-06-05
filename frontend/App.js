@@ -22,9 +22,14 @@ import BudgetCalHome from "./pages/BudgetCalHome";
 import BudgetListPage from "./pages/BudgetListPage";
 import BudgetCalEdit from "./pages/BudgetCalEdit";
 import LocationsScreen from "./pages/LocationsScreen";
-import SearchBar from "./pages/SearchBar";
+
+
 import UserProfilePage from "./pages/UserProfilePage";
 import EditProfile from "./pages/EditProfile";
+import DeleteUserScreen from "./pages/DeleteUserScreen";
+import SettingsPage from "./pages/Settings";
+
+
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -118,6 +123,7 @@ export default function App() {
           component={DrawerNavigator}
           options={{ headerShown: false }}
         />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

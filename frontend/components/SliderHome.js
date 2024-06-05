@@ -13,7 +13,9 @@ import { useNavigation } from "@react-navigation/native";
 
 // Import the SearchBar logic
 const SearchBar = () => {
+
   const [searchQuery, setSearchQuery] = useState("");
+
   const navigation = useNavigation();
 
   const handleSearch = () => {
@@ -28,6 +30,7 @@ const SearchBar = () => {
       ella: "ellaPage",
       hikkaduwa: "hikkaPage",
       jaffna: "jaffnaPage",
+
     };
 
     // Check if query is a valid page
@@ -45,7 +48,9 @@ const SearchBar = () => {
         style={styles.input}
         placeholder="Search..."
         value={searchQuery}
+
         onChangeText={(text) => setSearchQuery(text)}
+
         onSubmitEditing={handleSearch} // Trigger search on submit
       />
       <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
